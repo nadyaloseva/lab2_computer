@@ -1,0 +1,29 @@
+
+#include <conio.h>
+#include <iostream>
+
+using namespace std;
+
+struct text_info {
+unsigned char winleft; /*координаты */
+unsigned char wintop; /*верхнего левого угола */
+unsigned char winright; /*координаты */
+unsigned char winbottom; /*нижнего правого угола */
+unsigned char attribute; /*текущие атрибуты */
+unsigned char normattr; /*нормальные атрибуты */
+unsigned char currmode; /*активный видеорежим */
+unsigned char screenheight; /*размеры */
+unsigned char screenwidth; /*экрана */
+unsigned char curx; /*текущие координаты */
+unsigned char cury; /*курсора */
+};
+
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    struct text_info i;
+    gettextinfo (&i);
+    window (10, 10, 70, 20);
+    gotoxy(2, 3);
+    cprintf("at location 2, 3");
+}
