@@ -1,29 +1,40 @@
-
 #include <conio.h>
 #include <iostream>
 
 using namespace std;
 
-struct text_info {
-unsigned char winleft; /*координаты */
-unsigned char wintop; /*верхнего левого угола */
-unsigned char winright; /*координаты */
-unsigned char winbottom; /*нижнего правого угола */
-unsigned char attribute; /*текущие атрибуты */
-unsigned char normattr; /*нормальные атрибуты */
-unsigned char currmode; /*активный видеорежим */
-unsigned char screenheight; /*размеры */
-unsigned char screenwidth; /*экрана */
-unsigned char curx; /*текущие координаты */
-unsigned char cury; /*курсора */
-};
 
+/* вывод границы вокруг первого окна */
+void border(int startx, int starty, int endx, int endy)
+{
+register int i;
+gotoxy(1, 1);
+for(i=0; i<=endx-startx; i++)
+putch('-');
+gotoxy(1, endy-starty);
+for(i=0; i<=endx-startx; i++) putch('-');
+for(i=2; i<endy-starty; i++) {
+gotoxy(1, i);
+putch ('|');
+gotoxy(endx-startx+1, i);
+putch ('|');
+}
 
-int main() {
+void border (int, int, int, int);
+
+int main(void)
+{
     setlocale(LC_ALL, "Russian");
-    struct text_info i;
-    gettextinfo (&i);
-    window (10, 10, 70, 20);
-    gotoxy(2, 3);
-    cprintf("at location 2, 3");
+clrscr();
+
+/* создание первого окна */
+window (10, 10, 70, 20);
+border (12, 12, 72, 22);
+gotoxy(1,1);
+cputs("This line will be wrapped at the end of the window.");
+getche ();
+return 0;
+}
+
+
 }
