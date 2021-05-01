@@ -31,9 +31,31 @@ clrscr();
 window (10, 10, 70, 20);
 border (12, 12, 72, 22);
 gotoxy(1,1);
-cputs("This line will be wrapped at the end of the window.");
 getche ();
 return 0;
+    
+    for ( int i =0; i <16; i++){
+        switch (i){
+            case 0: cprintf("%d BLACK", "0"); break;
+            case 1: cprintf("%d BLUE ", "1"); break;
+            case 2: cprintf("%d GREEN ", "2"); break;
+            case 3: cprintf("%d CYAN ", "3"); break;
+            case 4: cprintf("%d RED", "4"); break;
+            case 5: cprintf("%d MAGENTA", "5"); break;
+            case 6: cprintf("%d BROWN", "6"); break;
+            case 7: cprintf("%d LIGHTGRAY", "7"); break;
+            case 8: cprintf("%d DARKGRAY ", "8"); break;
+            case 9: cprintf("%d LICHTBLUE ", "9"); break;
+            case 10: cprintf("%d LIGHTGREEN", "10"); break;
+            case 11: cprintf("%d LIGHTCYAN", "11"); break;
+            case 12: cprintf("%d LIGHTRED", "12"); break;
+            case 13: cprintf("%d LIGHTMAGENTA", "13"); break;
+            case 14: cprintf("%d YELLOW", "14"); break;
+            case 15: cprintf("%d WHITE", "15"); break;
+            
+            
+        }
+    }
 }
 
 
